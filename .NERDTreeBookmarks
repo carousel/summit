@@ -1,0 +1,11 @@
+.vim /home/miro/.vim
+.vimrc /home/miro/.vimrc
+.Xresources /home/miro/.Xresources
+bashrc /home/miro/.bashrc
+documents /home/miro/Documents
+home /home
+tmux /home/miro/.tmux.conf
+www /var/www
+Xprofile /var/log/xprofile
+zshrc /home/miro/.zshrc
+
