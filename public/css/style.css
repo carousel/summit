@@ -1,0 +1,16 @@
+.form-wrapper{
+    width:30%;
+    margin:auto;
+}
+.populate-form{
+    width:80%;
+}
+h4.form-group-label{
+    font-weight:bold;
+}
+span.error{
+    color:red;
+}
+.old-members-list{
+    list-style-type:none;
+}
