@@ -22,7 +22,7 @@
     </head>
     <body>
             <div class="welcome">
-                <img src="http://summit.ba/images/header-logo.png" alt="summit-logo"/>
+                <img src="http://summit.ba/images/header-logo.jpg" alt="summit-logo"/>
                 <h3>Aplikacija je trenutno u pripremi.</h3>
                 <h3>Za dodatne informacije kontaktirajte nas na <a href ="mailto:miroslav.trninic@gmail.com">email</a></h3>
                 <h3>Vidimo se uskoro.</h3>
