@@ -183,9 +183,14 @@ class AdminController extends BaseController {
             ->with("delete_message","Uspješno ste izbrisali člana: $old_member->first_name $old_member->last_name");
 
     }
-    public function oldMembersSearch()
+    public function membersSearch()
     {
-        return Input::all();
+        $input = Input::all();
+        $results = OldMembers::where($input["filter"],$input["pojam"])->get();
+        return View::make("admin.oldMembersSearch")
+            ->with("results",$results)
+            ->with("username",Auth::user())
+            ->with("search");
     }
     public function truncate()
     {

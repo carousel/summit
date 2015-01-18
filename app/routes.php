@@ -16,8 +16,8 @@
         Route::get('/old-members-edit-form',"AdminController@oldMembersEditForm");
         Route::post('/old-members-edit',"AdminController@oldMembersEdit");
         Route::post('/old-members-delete',"AdminController@oldMembersDelete");
-        Route::post("/old-members-search","AdminController@oldMembersSearch");
-        Route::post("/truncate","AdminController@truncate");
+        Route::post("/members-search","AdminController@membersSearch");
+
         
         
     });

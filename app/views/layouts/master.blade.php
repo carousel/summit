@@ -159,13 +159,13 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li>
-                        <a href="/admin-panel"><i class="fa fa-fw fa-dashboard"></i>Početna</a>
+                        <a href="/admin-panel"><i class="fa fa-fw fa-dashboard"></i>&nbsp;Početna</a>
                     </li>
                     <li>
-                        <a href="/old-members"><i class="fa fa-fw fa-wrench"></i>Pregled /  Edit</a>
+                        <a href="/old-members"><i class="fa fa-fw fa-wrench"></i>&nbsp;Pregled /  Edit</a>
                     </li>
                     <li>
-                        <a href="/populate-form"><i class="fa fa-fw fa-table"></i>Dodaj člana</a>
+                        <a href="/populate-form"><i class="fa fa-fw fa-table"></i>&nbsp;Dodaj člana</a>
                     </li>
                     <!--<li>
                         <a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>

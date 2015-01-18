@@ -14,8 +14,10 @@
                     @if(Session::has("edit_message"))
                         <p style="color:green">{{Session::get("edit_message")}}</p>
                     @endif
+                    <br>
+                            <a href="/old-members" class="btn btn-success pregled">Pregled svih članova</a>
                         <h1 class="page-header">
-                PAK Summit <small>lista članova (klikni za prikaz i izmjenu)</small>
+                PAK Summit <small>Pretraga</small>
                         
                         </h1>
                     <div class="pull-right">
@@ -33,16 +35,18 @@
                     </div>
                     <hr>
                     <br>
-                    @if(count($old_members) > 0)
+                    @if(count($results)>0)
                         <ul class="old-members-list">
-                            @foreach($old_members as $om)
-                                <li><span>{{$om->member_card_id . "."}}&nbsp;</span>
-                                <a href="old-members-show/{{$om->id}}
-                                ">{{$om->first_name . " " . $om->last_name}}</a></li>
+                            <h3>Rezultati:</h3>
+                            <br>
+                            @foreach($results as $result)
+                                <li><span>&nbsp;{{$result->member_card_id . "."}}&nbsp;</span>
+                                <a href="old-members-show/{{$result->id}}
+                                ">{{$result->first_name . " " . $result->last_name}}</a></li>
                             @endforeach
                         </ul>
                     @else
-                        <h3>Trenutno nema registrovanih članova</h3>
+                        <h4 class="search-status">Nijedan rezultat ne odgovara pojmu pretrage, pokušaj ponovo</h3>
                     @endif
                         <!--<ol class="breadcrumb">
                             <li class="active">

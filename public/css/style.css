@@ -14,3 +14,22 @@ span.error{
 .old-members-list{
     list-style-type:none;
 }
+.search-status{
+    color:red;
+}
+.pregled{
+    float:right;
+}
+.btn{
+    border-radius:100px;
+}
+select{
+    border-radius:100px!important;
+}
+input{
+    border-radius:100px!important;
+
+}
+.container-fluid{
+    height:10000px;
+}
