@@ -1,7 +1,8 @@
 <?php
 
 
-    Route::get('/',"AdminController@loginForm");
+    Route::get('/',"HomeController@welcome");
+    Route::get('/admin',"AdminController@loginForm");
     Route::post('login', "AdminController@login");
     Route::get('logout', "AdminController@logout");
 
@@ -17,12 +18,6 @@
         Route::post('/old-members-delete',"AdminController@oldMembersDelete");
         Route::post("/old-members-search","AdminController@oldMembersSearch");
         Route::post("/truncate","AdminController@truncate");
-        Route::get("/users",function(){
-            $users = User::all();
-            foreach ($users as $user) {
-                echo $user->username . " " . $user->password . "<br>";
-            }
-        });
         
         
     });
