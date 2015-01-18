@@ -15,7 +15,7 @@ class AdminController extends BaseController {
         if(Auth::attempt(["username"=>$input["username"],"password"=> $input["password"]])){
             return Redirect::to("/admin-panel");
         };
-        return Redirect::to("/")
+        return Redirect::back()
             ->with("error_message","Molimo pokušajte ponovo.");
 	}
 
