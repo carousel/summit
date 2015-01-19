@@ -41,7 +41,7 @@ class AdminController extends BaseController {
     public function logout()
     {
         Auth::logout();
-        return Redirect::to("/")
+        return Redirect::to("/admin/")
             ->with("logout_message","Uspješno ste se odjavili");
     }
 
@@ -102,7 +102,7 @@ class AdminController extends BaseController {
     {
         $username = User::where("username","paksummit")
             ->first();
-        $old_members = OldMembers::orderBy("member_card_id","asc")->get();
+        $old_members = OldMembers::orderBy("member_card_id","asc")->paginate(20);
 
         return View::make("admin.oldMembers")
             ->with("username",$username)
@@ -183,18 +183,41 @@ class AdminController extends BaseController {
             ->with("delete_message","Uspješno ste izbrisali člana: $old_member->first_name $old_member->last_name");
 
     }
-    public function membersSearch()
+    public function getSearch()
     {
-        $input = Input::all();
-        $results = OldMembers::where($input["filter"],$input["pojam"])->get();
+        //Session::forget("result_error");
+        $results = [];
         return View::make("admin.oldMembersSearch")
             ->with("results",$results)
             ->with("username",Auth::user())
             ->with("search");
     }
-    public function truncate()
+    public function postSearch()
     {
-        OldMembers::truncate();
-        return Redirect::to("/admin-panel");
+        $rules = [
+            "pojam" => "required"
+        ];
+        $input = Input::all();
+        $validator = Validator::make($input,$rules);
+        if($validator->fails()){
+            return Redirect::to("/members-search")
+                ->withErrors($validator->errors());
+        }
+        $results = OldMembers::where($input["filter"],$input["pojam"])
+            ->orderBy("member_card_id","asc")->get();
+            //->paginate(20);
+
+        if(count($results) <= 0){
+            return Redirect::to("/members-search")
+                ->withErrors("Nema resultata za traženi pojam. Pokušaj ponovo ili promjeni filter.");
+        }
+
+        $count = count($results);
+
+        return View::make("admin.oldMembersSearch")
+            ->with("results",$results)
+            ->with("count",$count)
+            ->with("username",Auth::user())
+            ->with("search");
     }
 } 

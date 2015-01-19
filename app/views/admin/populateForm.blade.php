@@ -7,7 +7,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            PAK Summit <small>forma za unos podataka postojećih članova</small>
+                            PAK Summit <small>forma za unos podataka</small>
                         </h1>
                     <div class="populate-form">
                         {{Form::open(["url"=>"populate","method"=>"post","role"=>"form"])}}

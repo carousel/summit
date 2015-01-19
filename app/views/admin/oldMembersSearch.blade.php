@@ -8,12 +8,6 @@
                 <!-- Page Heading -->
                 <div class="row">
                     <div class="col-lg-12">
-                    @if(Session::has("delete_message"))
-                        <p style="color:green">{{Session::get("delete_message")}}</p>
-                    @endif
-                    @if(Session::has("edit_message"))
-                        <p style="color:green">{{Session::get("edit_message")}}</p>
-                    @endif
                     <br>
                             <a href="/old-members" class="btn btn-success pregled">Pregled svih članova</a>
                         <h1 class="page-header">
@@ -35,19 +29,39 @@
                     </div>
                     <hr>
                     <br>
+                    <br>
+                    @if($errors->has())
+                        <div class="alert alert-danger alert-dismissable">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    @if(Session::has("result_error"))
+                        <div class="alert alert-danger alert-dismissable">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     @if(count($results)>0)
                         <ul class="old-members-list">
-                            <h3>Rezultati:</h3>
+                            <h3>Rezultata: {{$count}}</h3>
                             <br>
                             @foreach($results as $result)
                                 <li><span>&nbsp;{{$result->member_card_id . "."}}&nbsp;</span>
                                 <a href="old-members-show/{{$result->id}}
-                                ">{{$result->first_name . " " . $result->last_name}}</a></li>
+                                ">{{$result->first_name . " " . $result->last_name}}</a></lsi>
                             @endforeach
                         </ul>
-                    @else
-                        <h4 class="search-status">Nijedan rezultat ne odgovara pojmu pretrage, pokušaj ponovo</h3>
                     @endif
+                    <a href="#" id="top">Top</a>
                         <!--<ol class="breadcrumb">
                             <li class="active">
                                 <i class="fa fa-dashboard"></i> Dashboard

@@ -40,6 +40,7 @@
                                 <a href="old-members-show/{{$om->id}}
                                 ">{{$om->first_name . " " . $om->last_name}}</a></li>
                             @endforeach
+                            {{$old_members->links()}}
                         </ul>
                     @else
                         <h3>Trenutno nema registrovanih članova</h3>

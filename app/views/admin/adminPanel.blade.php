@@ -11,6 +11,20 @@
                         <h1 class="page-header">
                             PAK Summit <small>admin panel</small>
                         </h1>
+                    <div class="pull-right">
+                        {{Form::open(["url"=>"/members-search","method"=>"POST","class"=>"form-inline"])}}
+                            {{Form::label("filter")}}
+                            &nbsp;
+                            {{Form::select("filter",["first_name"=>"ime","last_name"=>"prezime","email"=>"email","year_of_birth"=>"godina rodjenja","join_year"=>"godina pristupa"],Input::old(),["class"=>"form-control"])}}
+                            &nbsp;
+                            {{Form::label("pojam")}}
+                            &nbsp;
+                            {{Form::text("pojam","",["class"=>"form-control","placeholder"=>"unesi pojam za pretragu"])}}
+                            &nbsp;
+                            {{Form::submit("Pretraga",["class"=>"btn btn-danger"])}}
+                        {{Form::close()}}
+                    </div>
+                    <br>
                     
                         
                         @if($total)

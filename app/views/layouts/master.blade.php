@@ -49,6 +49,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="/admin-panel">PAK Summit</a>
             </div>
@@ -206,6 +207,7 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="/js/bootstrap.js"></script>
+    <script src="/js/main.js"></script>
 
 
     <!-- Morris Charts JavaScript -->
