@@ -32,7 +32,7 @@
                         {{Form::close()}}
                     </div>
                     <hr>
-                    <br>
+                    <div class="all-members">
                     @if(count($old_members) > 0)
                         <ul class="old-members-list">
                             @foreach($old_members as $om)
@@ -42,9 +42,8 @@
                             @endforeach
                             {{$old_members->links()}}
                         </ul>
-                    @else
-                        <h3>Trenutno nema registrovanih članova</h3>
                     @endif
+                    </div>
                         <!--<ol class="breadcrumb">
                             <li class="active">
                                 <i class="fa fa-dashboard"></i> Dashboard

@@ -61,7 +61,11 @@
                             @endforeach
                         </ul>
                     @endif
-                    <a href="#" id="top">Top</a>
+                    @if(count($results)>20)
+                    <a href="#" id="top">
+                        <span class="glyphicon glyphicon-chevron-up">Vrh</span>
+                     </a>
+                    @endif
                         <!--<ol class="breadcrumb">
                             <li class="active">
                                 <i class="fa fa-dashboard"></i> Dashboard

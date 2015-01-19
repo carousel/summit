@@ -24,8 +24,7 @@
                             {{Form::submit("Pretraga",["class"=>"btn btn-danger"])}}
                         {{Form::close()}}
                     </div>
-                    <br>
-                    
+                    <div class="statistics">
                         
                         @if($total)
                             <h4>Trenutno registrovanih članova: {{$total}}</h4>
@@ -33,6 +32,7 @@
                     @if($last)
                             <h4>Poslednji registrovan član: <a href="/old-members-show/{{$last->id}}">{{$last->first_name . " " . $last->last_name}}</a></h4>
                     @endif
+                    </div>
                         
                         <!--<ol class="breadcrumb">
                             <li class="active">
